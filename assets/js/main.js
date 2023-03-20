@@ -6,6 +6,12 @@
   ed emetto un messaggio in console con il numero della cella cliccata.
  */
 
+// Seleziono P
+const paragraphEl = document.querySelector('p')
+
+// Aggiungo un contatore e lo setto a 0
+let count = 0;
+
 // L'utente clicca su un bottone che genererà una griglia di gioco quadrata.
 // Seleziono il bottone e lo salvo in una variabile
 const btnEL = document.querySelector('button')
@@ -41,11 +47,14 @@ btnEL.addEventListener("click", function() {
       */
       if(thisCell[i] === bomb[i]) {
         thisCell.style.backgroundColor = 'red'
+        thisCell.innerHTML = '💣'
         console.log(`Boom`);
-        containerEL.innerHTML = 'Hai perso!'
+        paragraphEl.innerHTML = `Hai perso!!! Celle cliccate: ${count}`
       } else {
         thisCell.classList.toggle('bg_blue')
+        thisCell.classList.toggle('active')
         console.log(`Cella cliccata: ${thisCell.textContent}`)
+        count++;
       }
     });
   }
