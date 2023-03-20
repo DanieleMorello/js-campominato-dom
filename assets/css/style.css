@@ -35,7 +35,7 @@ body {
 
 .cell{
   width: calc(100% / 10);
-  border: 1px solid var(--dark);
+  border: 1px solid var(--light);
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
@@ -51,6 +51,10 @@ img {
 .bg_blue {
   background-color: var(--blue);
   color: var(--light);
+}
+
+.active {
+  border: 1px solid var(--dark);
 }
 
 .normal {
@@ -107,6 +111,10 @@ button {
 #app_main {
   background-color: var(--green);
   height: calc(100vh - 7.5rem);
+}
+
+p {
+  padding: 1rem;
 }
 /* #endregion Main */
 
