@@ -117,6 +117,7 @@ button {
 p {
   padding: 1rem;
   text-transform: uppercase;
+  text-align: center;
 }
 /* #endregion Main */
 

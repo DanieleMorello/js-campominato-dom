@@ -68,12 +68,13 @@ btnEL.addEventListener('click', function () {
             thisCell.style.backgroundColor = "red"
             thisCell.innerHTML = `<i class="fa fa-bomb" aria-hidden="true"></i>`
             console.log('Boom')
+            
             // Imposto gameOver a true
             gameOver = true
             if(gameOver === true) {
               paragraphEl.innerHTML = `Hai perso!!! Celle cliccate: ${count}`
-              /* thisCell.removeEventListener('click', function () { }) */
             }
+            
           } else {
             thisCell.classList.toggle('bg_blue')
             thisCell.classList.toggle('active')
