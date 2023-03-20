@@ -48,7 +48,8 @@ btnEL.addEventListener("click", function() {
       console.log(`Cella cliccata: ${thisCell.textContent}`)
     });
   }
-  
+});
+
 /*
   Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: 
   le bombe.
@@ -90,7 +91,3 @@ for (let i = 0; randomNumbers.length < numMax; i++) {
 // Stampo l'array di numeri casuali
   return randomNumbers
 }
-
-});
-
-
