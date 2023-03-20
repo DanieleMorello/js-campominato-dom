@@ -56,17 +56,15 @@ btnEL.addEventListener('click', function () {
         console.log('Boom')
         // Imposto gameOver a true
         gameOver = true
-        return
+        if(gameOver = true) {
+          paragraphEl.innerHTML = `Hai perso!!! Celle cliccate: ${count}`
+          /* thisCell.removeEventListener('click', function () { }) */
+        }
       } else {
         thisCell.classList.toggle('bg_blue')
         thisCell.classList.toggle('active')
         console.log(`Cella cliccata: ${thisCell.textContent}`)
         count++
-      }
-
-      if(gameOver = true) {
-        paragraphEl.innerHTML = `Hai perso!!! Celle cliccate: ${count}`
-        /* thisCell.removeEventListener('click', function () { }) */
       }
     });
   }
