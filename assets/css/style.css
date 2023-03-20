@@ -16,11 +16,11 @@
 
 body {
   overflow-y: hidden;
-  font-family: 'Fredoka', sans-serif;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Fredoka", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-.container{
+.container {
   display: flex;
   flex-flow: row wrap;
   width: 650px;
@@ -31,10 +31,10 @@ body {
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
 }
 
-.cell{
+.cell {
   width: calc(100% / 10);
   border: 1px solid var(--light);
   aspect-ratio: 1 / 1;
@@ -83,12 +83,12 @@ img {
 
 [alt="Logo"] {
   width: 60px;
-} 
+}
 
-/* label {
+label {
   display: flex;
-  justify-content: end;
-} */
+  justify-content: start;
+}
 
 select {
   background-color: var(--gray);
@@ -115,7 +115,7 @@ button {
 }
 
 p {
-  padding: 1rem;
+  padding: 0.5rem;
   text-transform: uppercase;
   text-align: center;
 }
