@@ -33,6 +33,7 @@ btnEL.addEventListener("click", function() {
     thisCell.addEventListener('click', function() {
       thisCell.classList.toggle('bg_blue')
       console.log(`Cella cliccata: ${thisCell.textContent}`)
+
     });
   }
   
@@ -54,9 +55,13 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 l’utente ha cliccato su una cella che non era una bomba.
  */
 
+const bomb = randomNumbers(16)
+console.log(bomb)
+
 //Il computer deve generare 16 numeri casuali
-// Creo un array vuoto per contenere i numeri casuali
-const randomNumbers = [];
+function randomNumbers() {
+  // Creo un array vuoto per contenere i numeri casuali
+const randomNumbers = []
 
 // Genero un numero casuale compreso tra 1 e 100
 // let randomNumber = Math.floor(Math.random() * 100) + 1;
@@ -69,12 +74,14 @@ for (let i = 0; randomNumbers.length < 16; i++) {
   // Verifico se il numero casuale non è già presente nell'array
   if (randomNumbers.indexOf(randomNumber) === -1) {
     // Aggiungo il numero casuale all'array
-    randomNumbers.push(randomNumber);
+    randomNumbers.push(randomNumber)
   }
 }
 
 // Stampo l'array di numeri casuali
-console.log(randomNumbers);
+  return randomNumbers
+}
+
 });
 
 
