@@ -17,10 +17,23 @@ btnEL.addEventListener("click", function() {
   // Creo un max numero di celle
   let numCells = 101
 
+  const bomb = randomNumbers(16)
+  console.log(bomb)
+
   // Creo un ciclo n volte per le celle
   for (let i = 1; i < numCells; i++) {
     const cell = `<div class="cell">${i}</div>`
     containerEL.innerHTML += cell
+    
+      /*
+        Se il numero è presente nella lista dei numeri generati
+        abbiamo calpestato una bomba:
+        -la cella si colora di rosso e la partita termina.
+      */
+        // if(cell[i] === bomb[i]) {
+        //   cell.style.backgroundColor = 'red'
+        // }
+  
   }
 
   // Seleziono una cella che ha classe cell e active
@@ -33,7 +46,6 @@ btnEL.addEventListener("click", function() {
     thisCell.addEventListener('click', function() {
       thisCell.classList.toggle('bg_blue')
       console.log(`Cella cliccata: ${thisCell.textContent}`)
-
     });
   }
   
@@ -55,11 +67,8 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 l’utente ha cliccato su una cella che non era una bomba.
  */
 
-const bomb = randomNumbers(16)
-console.log(bomb)
-
 //Il computer deve generare 16 numeri casuali
-function randomNumbers() {
+function randomNumbers(numMax) {
   // Creo un array vuoto per contenere i numeri casuali
 const randomNumbers = []
 
@@ -67,7 +76,7 @@ const randomNumbers = []
 // let randomNumber = Math.floor(Math.random() * 100) + 1;
 
 // Ciclo il numero casuale
-for (let i = 0; randomNumbers.length < 16; i++) {
+for (let i = 0; randomNumbers.length < numMax; i++) {
   // Genero un numero casuale compreso tra 1 e 100
   const randomNumber = Math.floor(Math.random() * 100) + 1;
 
