@@ -72,9 +72,9 @@ btnEL.addEventListener('click', function () {
             // Imposto gameOver a true
             gameOver = true
             if(gameOver === true) {
-              paragraphEl.innerHTML = `Hai perso!!! Celle cliccate: ${count}`
+              paragraphEl.innerHTML = `<span>Hai perso!!! Ricarica la pagina per ricominciare</span><br> Celle cliccate: ${count}`
             }
-            
+
           } else {
             thisCell.classList.toggle('bg_blue')
             thisCell.classList.toggle('active')

@@ -119,6 +119,10 @@ p {
   text-transform: uppercase;
   text-align: center;
 }
+
+p span {
+  color: var(--red);
+}
 /* #endregion Main */
 
 /* #region Footer */
