@@ -5,6 +5,7 @@
   --light: #ffffff;
   --dark: #000000;
   --blue: #0000ff;
+  --red: #ff0000;
 }
 
 * {
@@ -115,6 +116,7 @@ button {
 
 p {
   padding: 1rem;
+  text-transform: uppercase;
 }
 /* #endregion Main */
 
@@ -124,5 +126,9 @@ p {
   height: 3.5rem;
   display: flex;
   align-items: center;
+}
+
+#app_footer i {
+  color: var(--red);
 }
 /* #endregion Footer */

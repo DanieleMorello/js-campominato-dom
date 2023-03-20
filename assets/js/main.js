@@ -35,7 +35,19 @@ btnEL.addEventListener('click', function () {
   for (let i = 1; i < numCells; i++) {
     const cell = `<div class="cell">${i}</div>`
     containerEL.innerHTML += cell
-  }
+
+  // Seleziono la select e la salvo in una variabile
+  // const selectEl = document.querySelector('select')
+  // selectEl.addEventListener('submit', function() {
+  //   if(selectEl.value === 'normal') {
+  //     numCells = 81
+  //     containerEL.innerHTML += cell.add.classList('normal')
+  //   } else if (selectEl.value === 'hard') {
+  //     numCells = 49
+  //     containerEL.innerHTML += cell.add.classList('hard')
+  //   }
+  // })
+}
 
   // Seleziono una cella
   const cellEl = document.querySelectorAll('.cell')
@@ -54,7 +66,7 @@ btnEL.addEventListener('click', function () {
           
           if (thisCell[i] === bomb[i]) {
             thisCell.style.backgroundColor = "red"
-            thisCell.innerHTML = "💣"
+            thisCell.innerHTML = `<i class="fa fa-bomb" aria-hidden="true"></i>`
             console.log('Boom')
             // Imposto gameOver a true
             gameOver = true
