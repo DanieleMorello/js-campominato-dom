@@ -24,28 +24,29 @@ btnEL.addEventListener("click", function() {
   for (let i = 1; i < numCells; i++) {
     const cell = `<div class="cell">${i}</div>`
     containerEL.innerHTML += cell
-    
-      /*
-        Se il numero è presente nella lista dei numeri generati
-        abbiamo calpestato una bomba:
-        -la cella si colora di rosso e la partita termina.
-      */
-        // if(cell[i] === bomb[i]) {
-        //   cell.style.backgroundColor = 'red'
-        // }
-  
   }
 
-  // Seleziono una cella che ha classe cell e active
+  // Seleziono una cella 
   const cellEl = document.querySelectorAll('.cell')
-  // Aggiungo eventlisner per la classe active ciclando per la lunghezza dell'array cellEl
+  // Aggiungo eventlisner ciclando per la lunghezza dell'array cellEl
   for (let i = 0; i < cellEl.length; i++) {
     const thisCell = cellEl[i]
     console.log(thisCell)
 
     thisCell.addEventListener('click', function() {
-      thisCell.classList.toggle('bg_blue')
-      console.log(`Cella cliccata: ${thisCell.textContent}`)
+       /*
+        Se il numero è presente nella lista dei numeri generati
+        abbiamo calpestato una bomba:
+        -la cella si colora di rosso e la partita termina.
+      */
+      if(thisCell[i] === bomb[i]) {
+        thisCell.style.backgroundColor = 'red'
+        console.log(`Boom`);
+        containerEL.innerHTML = 'Hai perso!'
+      } else {
+        thisCell.classList.toggle('bg_blue')
+        console.log(`Cella cliccata: ${thisCell.textContent}`)
+      }
     });
   }
 });
