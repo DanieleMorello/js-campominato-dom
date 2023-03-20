@@ -50,22 +50,25 @@ btnEL.addEventListener('click', function () {
         abbiamo calpestato una bomba:
         -la cella si colora di rosso e la partita termina.
       */
-      if (thisCell[i] === bomb[i]) {
-        thisCell.style.backgroundColor = "red"
-        thisCell.innerHTML = "💣"
-        console.log('Boom')
-        // Imposto gameOver a true
-        gameOver = true
-        if(gameOver = true) {
-          paragraphEl.innerHTML = `Hai perso!!! Celle cliccate: ${count}`
-          /* thisCell.removeEventListener('click', function () { }) */
+        if(gameOver !== true) {
+          
+          if (thisCell[i] === bomb[i]) {
+            thisCell.style.backgroundColor = "red"
+            thisCell.innerHTML = "💣"
+            console.log('Boom')
+            // Imposto gameOver a true
+            gameOver = true
+            if(gameOver === true) {
+              paragraphEl.innerHTML = `Hai perso!!! Celle cliccate: ${count}`
+              /* thisCell.removeEventListener('click', function () { }) */
+            }
+          } else {
+            thisCell.classList.toggle('bg_blue')
+            thisCell.classList.toggle('active')
+            console.log(`Cella cliccata: ${thisCell.textContent}`)
+            count++
+          }
         }
-      } else {
-        thisCell.classList.toggle('bg_blue')
-        thisCell.classList.toggle('active')
-        console.log(`Cella cliccata: ${thisCell.textContent}`)
-        count++
-      }
     });
   }
 });
