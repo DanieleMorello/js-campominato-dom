@@ -35,4 +35,46 @@ btnEL.addEventListener("click", function() {
       console.log(`Cella cliccata: ${thisCell.textContent}`)
     });
   }
+  
+/*
+  Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: 
+  le bombe.
+  Nella stessa cella può essere posizionata al massimo una bomba, perciò nell’array delle bombe
+  non potranno esserci due numeri uguali.
+  In seguito l'utente clicca su una cella:
+  se il numero è presente nella lista dei numeri generati
+  abbiamo calpestato una bomba
+    -la cella si colora di rosso e la partita termina.
+  Altrimenti:
+    -la cella cliccata si colora di azzurro
+    -l'utente può continuare a cliccare sulle altre celle.
+La partita termina quando il giocatore clicca su una bomba o quando raggiunge il numero massimo 
+possibile di numeri consentiti (ovvero quando ha rivelato tutte le celle che non sono bombe).
+Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che 
+l’utente ha cliccato su una cella che non era una bomba.
+ */
+
+//Il computer deve generare 16 numeri casuali
+// Creo un array vuoto per contenere i numeri casuali
+const randomNumbers = [];
+
+// Genero un numero casuale compreso tra 1 e 100
+// let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+// Ciclo il numero casuale
+for (let i = 0; randomNumbers.length < 16; i++) {
+  // Genero un numero casuale compreso tra 1 e 100
+  const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+  // Verifico se il numero casuale non è già presente nell'array
+  if (randomNumbers.indexOf(randomNumber) === -1) {
+    // Aggiungo il numero casuale all'array
+    randomNumbers.push(randomNumber);
+  }
+}
+
+// Stampo l'array di numeri casuali
+console.log(randomNumbers);
 });
+
+
